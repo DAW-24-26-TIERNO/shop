@@ -1,18 +1,23 @@
 # Productos y clientes
 
 ## Modelos
-Client, Product y Order
+Client, Product y Order. En cada Order solamente hay un Client y un Product.
 
 ## Endpoints MVC
-- `GET /`: dvuelve una home con todos los clientes, pedidos y productos.
+- `GET /`: devuelve un index con todos los Pedidos (`Order`) de la base de datos. Debajo de cada cliente habrá un botón de eliminar que lanzará una petición `DELETE /client/{id}`.
 
 De Client:
-- `GET /client`: devuelve todos los clientes
-- `POST /client`: inserta un cliente
-- `PUT /client/{id}`: actualiza el cliente
-- `DELETE /client/{id}`: elimina cliente
+- `GET /client/create`: devuelve formulario para crear cliente.
+- `POST /client`: inserta el cliente con los datos del campo anterior.
+- `DELETE /client/{id}`: elimina cliente.
 
 De Order:
-- `GET /order/create`: devuelve formulario de creación de order que un desplegable con clientes y otro con productos. Debe elegir uno de cada, e insertarlo en la BD
+- `GET /order/create`: devuelve formulario de creación de order con un desplegable (o el input que quieras, pero que se pueda seleccionar) con clientes y otro con productos. Debe elegir uno de cada, e insertarlo en la BD.
 - `POST /order`: llega desde el endpoint anterior y guarda en la bd el pedido seleccionado.
+
+## Endpoints API REST
+- `GET /api/order`: devuelve todas las orders de la base de datos.
+- `POST /api/order`: insertar order en la bd
+- `DELETE /api/order/{id}`: elimina de la bd esa order.
+
 
