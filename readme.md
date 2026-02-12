@@ -4,7 +4,7 @@
 Client, Product y Order. En cada Order solamente hay un Client y un Product.
 
 ## Endpoints MVC
-- `GET /`: devuelve un index con todos los Pedidos (`Order`) de la base de datos. Debajo de cada cliente habrá un botón de eliminar que lanzará una petición `DELETE /client/{id}`.
+- `GET /`: devuelve un index con todos los Pedidos (`Order`) de la base de datos. Debajo habrá una lista con todos los clientes, y debajo de cada uno habrá un botón de eliminar que lanzará una petición `DELETE /client/{id}`.
 
 De Client:
 - `GET /client/create`: devuelve formulario para crear cliente.
