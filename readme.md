@@ -75,9 +75,4 @@ INSERT INTO orders (id, product_id, client_id, date) VALUES
 (18, 7, 9, '2024-03-25'),
 (19, 9, 2, '2024-03-28'),
 (20, 2, 7, '2024-03-30');
-
--- Resetear secuencias autoincrement (para MySQL)
-ALTER TABLE clients AUTO_INCREMENT = 11;
-ALTER TABLE products AUTO_INCREMENT = 16;
-ALTER TABLE orders AUTO_INCREMENT = 21;
 ```
