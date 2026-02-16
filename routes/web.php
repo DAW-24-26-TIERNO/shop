@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [OrderController::class, 'index'])->name('index');
@@ -12,3 +13,7 @@ Route::delete('/client/{id}', [ClientController::class, 'destroy'])->name('clien
 
 Route::get('/order/create', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order', [OrderController::class, 'store'])->name('order.store');
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
+});

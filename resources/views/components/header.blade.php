@@ -7,7 +7,9 @@
             <li class="nav-item active"><a class="nav-link" href="{{ route('client.create') }}">Create client</a></li>
             <li class="nav-item active"><a class="nav-link" href="{{ route('order.create') }}">Create order</a></li>
             @auth
-                <li class="nav-item"><span class="nav-link">Hola, {{ auth()->user()->name }}</span></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('dashboard') }}">Hola, {{ auth()->user()->name }}</a>
+                </li>
                 <li class="nav-item">
                     <form method="post" action="{{ route('logout') }}">
                         @csrf
