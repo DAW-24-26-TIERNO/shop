@@ -6,11 +6,10 @@ use App\Models\Client;
 use App\Models\Order;
 use App\Models\Product;
 use Carbon\Carbon;
-use Date;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Log;
+use Illuminate\Support\Facades\Log;
 
 class OrderApiController extends Controller
 {
