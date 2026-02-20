@@ -49,14 +49,16 @@
                         <p class="card-text"> {{ $client->address }} </p>@endif
                         <p class="card-text">
                             @foreach ($client->orders as $o)
-                                {{ $o->date }} /// 
+                                {{ $o->date }} ///
                             @endforeach
                         </p>
-                        <form method="post" action="{{ route('client.destroy', $client->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <input type="submit" class="btn btn-danger" value="Delete client">
-                        </form>
+                        @auth
+                            <form method="post" action="{{ route('client.destroy', $client->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="btn btn-danger" value="Delete client">
+                            </form>
+                        @endauth
                     </div>
                 </div>
             @endforeach
